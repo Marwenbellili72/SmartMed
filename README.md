@@ -66,7 +66,7 @@ Ajoutez le contenu suivant dans un fichier `docker-compose.yml` :
 ```yaml
 services:
   nginx:
-    build: ./nginx
+    image: marwenbellili/nginx:latest  
     ports:
       - "80:80"
     volumes:
@@ -83,7 +83,7 @@ services:
           memory: 2G        
 
   smartmed:
-    build: ./SmartMed
+    image: marwenbellili/smartmed:latest  
     command: sh -c "gunicorn SmartMed.wsgi:application --bind 0.0.0.0:8000"
     volumes:
       - static_volume:/app/staticfiles
