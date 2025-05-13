@@ -130,39 +130,47 @@ We tested several machine learning algorithms. The **logistic regression model**
 
 We fine-tuned a **Large Language Model (LLM)** with **LoRA** via **Unsloth** for semantic analysis of CT images.
 
-*   📁 The model is hosted on **Hugging Face**.
-*   💻 It is accessible via a **Google Colab notebook**.
+*   📁 The model is hosted on **Hugging Face**.[link to the repository](https://huggingface.co/Marwen72/lora_model).
+  <p align="center">
+  <img src="assets/img9.png" width="500px" alt="3D Visualization Preview" />
+  </p>
+*   💻 It is accessible via a **Google Colab notebook**.[Try The Model](https://colab.research.google.com/drive/1AGGNVoC-DFCiVFZ3-GgFKxxLcATJxRM5?usp=sharing)
 *   ❗ Full deployment was not achieved due to the complexity of required resources.
 
 ---
 
 ### 🔁 CI/CD Pipeline
 We implemented a fully automated DevOps pipeline to ensure continuous integration, secure deployments, and real-time monitoring for SmartMed.
-
+  <p align="center">
+  <img src="assets/img14.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 *   **⚙️ Jenkins** :Automates testing, linting, and deployment with each code push.
-
+  <p align="center">
+  <img src="assets/img15.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 *   **🧪 SonarQube + Trivy** :
 
     *   **SonarQube** :analyzes code quality, detects bugs, and ensures maintainability.
-
+  <p align="center">
+  <img src="assets/img16.png" width="500px" alt="3D Visualization Preview" />
+  </p>
     *   **Trivy** :scans Docker containers for vulnerabilities.
-      
+  <p align="center">
+  <img src="assets/img17.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 *   **📦 Docker + NGINX**:
     *   **Docker** :containerizes the entire application for consistent environments.
     *   **NGINX** :serves static files (CSS, JS, images) and acts as a reverse proxy to forward client requests to the Django backend.
+      <p align="center">
+  <img src="assets/img19.png" width="500px" alt="3D Visualization Preview" />
+  </p>
       
 *   **📊 Prometheus + Grafana**:
     *   **Prometheus** :collects metrics from the app (CPU, memory, uptime).
     *   **Grafana** :visualizes these metrics through customizable dashboards.
----
-
-### 🔒 Security Testing
-
-We performed **network security tests** using:
-
-*   **Nmap**: scanning for exposed ports and services.
-*   **Wireshark**: analyzing network traffic to detect vulnerabilities.
-
+      <p align="center">
+  <img src="assets/img18.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 ---
 
 ## 📊 Results Visualization
@@ -281,8 +289,3 @@ Option 2: Using Docker Compose
     The SmartMed site should now be accessible on port 80 via your browser!
 
 ---
-
-### 🤖 LLM Access
-
-*   The **Colab notebook** is available for testing the fine-tuned model.[Try The Model](https://colab.research.google.com/drive/1AGGNVoC-DFCiVFZ3-GgFKxxLcATJxRM5?usp=sharing)
-*   The model files on **Hugging Face**: [link to the repository](https://huggingface.co/Marwen72/lora_model).
