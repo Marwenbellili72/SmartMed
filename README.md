@@ -113,13 +113,40 @@ Nous avons fine-tuné un **LLM (Large Language Model)** avec **LoRA** via **Unsl
 ---
 
 ### 🔁 CI/CD Pipeline
+We implemented a fully automated DevOps pipeline to ensure continuous integration, secure deployments, and real-time monitoring for SmartMed.
 
-Mise en place d’un pipeline DevOps automatisé :
+⚙️ Jenkins
+Automates testing, linting, and deployment with each code push.
+📷 Build status and deployment logs are previewed via Jenkins interface screenshots.
 
-* **Jenkins** : automatisation des tests et déploiements
-* **SonarQube + Trivy** : contrôle qualité et sécurité du code
-* **Docker + NGINX** : déploiement conteneurisé
-* **Grafana + Prometheus** : surveillance des performances
+🧪 SonarQube + Trivy
+
+SonarQube analyzes code quality, detects bugs, and ensures maintainability.
+
+Trivy scans Docker containers for vulnerabilities.
+📷 Screenshots of code quality and security reports are included.
+
+📦 Docker + NGINX
+
+Docker containerizes the entire application for consistent environments.
+
+NGINX serves static files (CSS, JS, images) and acts as a reverse proxy to forward client requests to the Django backend.
+📷 Infrastructure diagram shows how NGINX routes and serves content.
+
+📊 Prometheus + Grafana
+
+Prometheus collects metrics from the app (CPU, memory, uptime).
+
+Grafana visualizes those metrics through customizable dashboards.
+📷 Sample Grafana dashboard images are provided.
+
+📎 All results are previewed with images, including Jenkins pipelines, SonarQube reports, Docker architecture, and Grafana dashboards.
+* 📊 Prometheus + Grafana for Jenkins Monitoring
+To monitor Jenkins performance and job executions, we integrated Prometheus with the Jenkins Prometheus plugin, and visualized the data using Grafana dashboards.
+
+Prometheus scrapes metrics from Jenkins (e.g., job duration, build success rate, queue time).
+
+Grafana displays those metrics with real-time charts for easier diagnosis and performance tracking.
 
 ---
 
