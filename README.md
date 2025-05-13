@@ -2,113 +2,113 @@
 
 ## 🧭 Overview
 
-**SmartMed** est un projet développé à l’**École Supérieure des Communications de Tunis (SUP’COM)** durant l’année universitaire **2025–2026**. Il combine l’**intelligence artificielle**, l’**IoT**, et les **technologies web** pour offrir une plateforme avancée d’aide au diagnostic et à la prévention des maladies cardiaques.
+**SmartMed** is a project developed at the **Higher School of Communications of Tunis (SUP’COM)** during the **2025–2026 academic year**. It combines **artificial intelligence (AI)**, the **Internet of Things (IoT)**, and **web technologies** to offer an advanced platform for aiding in the diagnosis and prevention of cardiac diseases.
 
-Le système propose :
+The system offers:
 
-* L’**amélioration d’images médicales** (CT),
-* La **segmentation du cœur** en 3D,
-* La **prédiction des risques d’infarctus**,
-* Des **consultations médicales en ligne** en temps réel.
+*   **Medical image enhancement** (CT),
+*   **3D heart segmentation**,
+*   **Heart attack risk prediction**,
+*   **Real-time online medical consultations**.
 
 ---
 
-## ⚙️ Technologies Utilisées
+## ⚙️ Technologies Used
 
 ### 🌐 Frontend
 
-* **HTML5** : Structure du contenu web
-* **CSS3** : Mise en forme pour une interface ergonomique
-* **JavaScript** : Fonctionnalités interactives (zoom sur les images, etc.)
-* **jQuery** : Simplifie la manipulation du DOM et la gestion des événements
+*   **HTML5**: Web content structure
+*   **CSS3**: Styling for an ergonomic interface
+*   **JavaScript**: Interactive features (image zoom, etc.)
+*   **jQuery**: Simplifies DOM manipulation and event management
 
 ### 🖥️ Backend
 
-* **Django** : Framework Python pour la logique serveur et la gestion des données
+*   **Django**: Python framework for server logic and data management
 
 ### 🧠 Machine Learning & AI
 
-* **TotalSegmentator** : Segmentation 3D des structures cardiaques
-* **Logistic Regression** : Prédiction du risque d’infarctus
-* **LoRA + Unsloth** : Fine-tuning de LLMs
-* **Hugging Face** : Hébergement et partage des modèles
+*   **TotalSegmentator**: 3D segmentation of cardiac structures
+*   **Logistic Regression**: Heart attack risk prediction
+*   **LoRA + Unsloth**: Fine-tuning LLMs
+*   **Hugging Face**: Model hosting and sharing
 
 ### 📡 IoT
 
-* **Arduino** : Acquisition de signes vitaux (température, fréquence cardiaque)
-* **ThingSpeak** : Visualisation des données IoT en temps réel
-* **ZEGOCLOUD API** : Consultations médicales en ligne en direct
+*   **Arduino**: Acquisition of vital signs (temperature, heart rate)
+*   **ThingSpeak**: Real-time IoT data visualization
+*   **ZEGOCLOUD API**: Live online medical consultations
 
 ### 🛠️ DevOps
 
-* **Jenkins** : Intégration et déploiement continu (CI/CD)
-* **NGINX** : Reverse proxy & gestion des fichiers statiques
-* **Docker** : Conteneurisation des services
-* **Trivy** : Analyse des vulnérabilités
-* **SonarQube** : Analyse de qualité du code
-* **Prometheus & Grafana** : Surveillance des performances
+*   **Jenkins**: Continuous Integration and Deployment (CI/CD)
+*   **NGINX**: Reverse proxy & static file management
+*   **Docker**: Service containerization
+*   **Trivy**: Vulnerability scanning
+*   **SonarQube**: Code quality analysis
+*   **Prometheus & Grafana**: Performance monitoring
 
-### 🔐 Sécurité
+### 🔐 Security
 
-* **Nmap & Wireshark** : Tests de sécurité réseau
+*   **Nmap & Wireshark**: Network security testing
 
 ---
 
-## 🏥 Principales Fonctionnalités
+## 🏥 Key Features
 
 ### 📈 Medical Image Enhancement
 
-Nous avons appliqué deux techniques principales pour **améliorer la qualité des images CT** :
+We applied two main techniques to **enhance the quality of CT images**:
 
-* **Égalisation d’histogramme** : améliore la **luminosité et le contraste** globaux.
-* **CLAHE (Contrast Limited Adaptive Histogram Equalization)** : améliore le **contraste local** tout en **préservant les détails** sans créer d'artefacts.
+*   **Histogram Equalization**: improves overall **brightness and contrast**.
+*   **CLAHE (Contrast Limited Adaptive Histogram Equalization)**: enhances **local contrast** while **preserving details** without creating artifacts.
 
-> Bien que l’amélioration soit notable, elle n’est pas parfaite. Des artefacts peuvent apparaître selon les paramètres, mais la lisibilité globale est significativement améliorée.
+> While the improvement is noticeable, it's not perfect. Artifacts may appear depending on the parameters, but overall readability is significantly improved.
 
-* 🖼️ **Figure 1.6** : montre l’amélioration du contraste après égalisation d’histogramme.
-* 🖼️ **Figure 1.7** : illustre les résultats de la transformation CLAHE avec un histogramme mieux réparti dans les zones sombres.
+*   🖼️ **Figure 1.6**: shows contrast improvement after histogram equalization.
+*   🖼️ **Figure 1.7**: illustrates CLAHE transformation results with a better-distributed histogram in dark areas.
 
-Ces méthodes offrent un **bon compromis** entre amélioration du contraste et conservation des détails.
+These methods offer a **good trade-off** between contrast enhancement and detail preservation.
 
 ---
 
 ### 🫀 Heart Segmentation
 
-Nous avons utilisé l’**API de TotalSegmentator** pour réaliser la **segmentation 3D** des images CT du cœur. Pour **accélérer le traitement**, nous avons choisi le **mode `fast`**, qui sacrifie légèrement la précision au profit du temps d’exécution.
+We used the **TotalSegmentator API** to perform **3D segmentation** of cardiac CT images. To **speed up processing**, we chose the **`fast` mode**, which slightly sacrifices precision for execution time.
 
-> ✅ Les résultats sont satisfaisants pour la visualisation et l’analyse des **structures internes** du cœur malgré une **précision moindre**.
+> ✅ The results are satisfactory for visualizing and analyzing the **internal structures** of the heart, despite slightly lower **precision**.
 
-Les sorties sont visualisées avec **3D Slicer**, facilitant ainsi l’étude anatomique du cœur.
+The outputs are visualized with **3D Slicer**, facilitating the anatomical study of the heart.
 
 ---
 
 ### ❤️‍🔥 Heart Attack Prediction
 
-Nous avons testé plusieurs algorithmes de machine learning. Le **modèle de régression logistique** a été retenu pour sa **meilleure performance**.
+We tested several machine learning algorithms. The **logistic regression model** was selected for its **superior performance**.
 
-* 📊 Les résultats incluent : **matrices de confusion** et **courbes ROC**.
-* 🎯 Le modèle classe les patients selon leur **risque d’infarctus** à partir de leurs données cliniques.
+*   📊 Results include: **confusion matrices** and **ROC curves**.
+*   🎯 The model classifies patients according to their **heart attack risk** based on their clinical data.
 
 ---
 
 ### 🔴 Online Consultations via IoT
 
-* 🩺 Les signes vitaux du patient — tels que la température corporelle et la fréquence cardiaque — sont mesurés à l’aide d’un montage Arduino.
-* 🧪 Avant le déploiement réel, nous avons simulé ce système via Proteus, ce qui nous a permis de tester le comportement des capteurs dans un environnement virtuel.
-* 🔌 Comme Proteus ne peut pas directement interagir avec un vrai port série, nous avons utilisé HHD Virtual Serial Port Tools pour créer une connexion virtuelle (port COM) entre Proteus et notre machine hôte.
-* 🐍 Un script Python simple a été utilisé pour lire les données à partir du port COM virtuel et les envoyer automatiquement vers ThingSpeak, où les mesures sont visualisées en temps réel via des graphiques.
-* 📡 Les données IoT sont ensuite accessibles via une interface web pour un suivi médical continu.
-* 👨‍⚕️ Grâce à l’API ZEGOCLOUD, les médecins peuvent initier des consultations à distance tout en visualisant en direct les signes vitaux du patient affichés sur la plateforme.
+*   🩺 The patient's vital signs—such as body temperature and heart rate—are measured using an Arduino setup.
+*   🧪 Before actual deployment, we simulated this system using Proteus, allowing us to test sensor behavior in a virtual environment.
+*   🔌 Since Proteus cannot directly interact with a real serial port, we used HHD Virtual Serial Port Tools to create a virtual connection (COM port) between Proteus and our host machine.
+*   🐍 A simple Python script was used to read data from the virtual COM port and automatically send them to ThingSpeak, where measurements are visualized in real-time via graphs.
+*   📡 IoT data are then accessible via a web interface for continuous medical monitoring.
+*   👨‍⚕️ Thanks to the ZEGOCLOUD API, doctors can initiate remote consultations while viewing the patient's live vital signs displayed on the platform.
 
 ---
 
 ### 🧠 LLM for CT Image Analysis
 
-Nous avons fine-tuné un **LLM (Large Language Model)** avec **LoRA** via **Unsloth**, pour l’analyse sémantique des images CT.
+We fine-tuned a **Large Language Model (LLM)** with **LoRA** via **Unsloth** for semantic analysis of CT images.
 
-* 📁 Le modèle est hébergé sur **Hugging Face**.
-* 💻 Il est accessible depuis un **notebook Google Colab**.
-* ❗ Déploiement complet non réalisé à cause de la complexité des ressources nécessaires.
+*   📁 The model is hosted on **Hugging Face**.
+*   💻 It is accessible via a **Google Colab notebook**.
+*   ❗ Full deployment was not achieved due to the complexity of required resources.
 
 ---
 
@@ -117,7 +117,7 @@ We implemented a fully automated DevOps pipeline to ensure continuous integratio
 
 ⚙️ Jenkins
 Automates testing, linting, and deployment with each code push.
-📷 Build status and deployment logs are previewed via Jenkins interface screenshots.
+📷 Build status and deployment logs are illustrated via Jenkins interface screenshots.
 
 🧪 SonarQube + Trivy
 
@@ -131,100 +131,174 @@ Trivy scans Docker containers for vulnerabilities.
 Docker containerizes the entire application for consistent environments.
 
 NGINX serves static files (CSS, JS, images) and acts as a reverse proxy to forward client requests to the Django backend.
-📷 Infrastructure diagram shows how NGINX routes and serves content.
+📷 An infrastructure diagram shows how NGINX routes and serves content.
 
 📊 Prometheus + Grafana
 
 Prometheus collects metrics from the app (CPU, memory, uptime).
 
-Grafana visualizes those metrics through customizable dashboards.
+Grafana visualizes these metrics through customizable dashboards.
 📷 Sample Grafana dashboard images are provided.
 
-📎 All results are previewed with images, including Jenkins pipelines, SonarQube reports, Docker architecture, and Grafana dashboards.
-* 📊 Prometheus + Grafana for Jenkins Monitoring
-To monitor Jenkins performance and job executions, we integrated Prometheus with the Jenkins Prometheus plugin, and visualized the data using Grafana dashboards.
+📎 All results are illustrated with images, including Jenkins pipelines, SonarQube reports, Docker architecture, and Grafana dashboards.
+*   📊 Prometheus + Grafana for Jenkins Monitoring
+    To monitor Jenkins performance and job executions, we integrated Prometheus with the Jenkins Prometheus plugin and visualized the data using Grafana dashboards.
 
-Prometheus scrapes metrics from Jenkins (e.g., job duration, build success rate, queue time).
+    Prometheus scrapes metrics from Jenkins (e.g., job duration, build success rate, queue time).
 
-Grafana displays those metrics with real-time charts for easier diagnosis and performance tracking.
+    Grafana displays these metrics with real-time charts for easier diagnostics and performance tracking.
 
 ---
 
 ### 🔒 Security Testing
 
-Nous avons effectué des **tests de sécurité réseau** avec :
+We performed **network security tests** using:
 
-* **Nmap** : scan des ports et services exposés
-* **Wireshark** : analyse du trafic réseau pour détecter des vulnérabilités
+*   **Nmap**: scanning for exposed ports and services.
+*   **Wireshark**: analyzing network traffic to detect vulnerabilities.
 
 ---
 
-## 📊 Visualisation des Résultats
+## 📊 Results Visualization
 
-| Résultat                           | Outil utilisé                 | Détails                       |
+| Result                             | Tool Used                     | Details                       |
 | ---------------------------------- | ----------------------------- | ----------------------------- |
-| **CT Image Enhancement**           | Web UI                        | Résultats CLAHE + égalisation |
-| **Segmentation 3D du cœur**        | 3D Slicer                     | Affichage interactif          |
-| **Prédiction d’infarctus**         | Django + Matplotlib           | ROC, confusion matrix         |
-| **Données IoT (température, BPM)** | ThingSpeak + Web dashboard    | Graphes temps réel            |
-| **Analyse LLM**                    | Google Colab + Hugging Face   | Résumés textuels              |
-| **Monitoring & Sécurité**          | Grafana, Trivy, Jenkins, Nmap | Dashboards + rapports         |
+| **CT Image Enhancement**           | Web UI                        | CLAHE + equalization results  |
+| **3D Heart Segmentation**          | 3D Slicer                     | Interactive display           |
+| **Heart Attack Prediction**        | Django + Matplotlib           | ROC, confusion matrix         |
+| **IoT Data (temperature, BPM)**    | ThingSpeak + Web dashboard    | Real-time graphs              |
+| **LLM Analysis**                   | Google Colab + Hugging Face   | Textual summaries             |
+| **Monitoring & Security**          | Grafana, Trivy, Jenkins, Nmap | Dashboards + reports          |
 
 ---
 
 ## 🧰 Setup Instructions
 
-### ✅ Prérequis
+### ✅ Prerequisites
 
-* Python 3.8+
-* Docker
-* Arduino IDE
-* Comptes ThingSpeak, Hugging Face, ZEGOCLOUD
+*   Python installed on your machine
+*   Pip (Python package manager) installed
+*   Docker and Docker Compose installed
 
 ### 🚀 Installation
 
-```bash
-# 1. Cloner le dépôt
-git clone https://github.com/marwenbellili/smartmed.git
-cd smartmed
+Steps to Run the Site
+Option 1: Using a Virtual Environment
+1.  Create a Virtual Environment
+    Open your terminal or command line and run the following command to create a virtual environment:
+    ```sh
+    python -m venv env
+    ```
+2.  Activate the Virtual Environment
+    On Windows:
+    ```sh
+    env\Scripts\activate
+    ```
+    On macOS and Linux:
+    ```sh
+    source env/bin/activate
+    ```
+3.  Navigate to the Project Folder
+    Change directory to the project folder:
+    ```sh
+    cd SmartMed
+    ```
+4.  Install Dependencies
+    Install all dependencies listed in the `requirements.txt` file:
+    ```sh
+    pip install -r requirements.txt
+    ```
+5.  Run the Development Server
+    To start the SmartMed website:
+    ```sh
+    python manage.py runserver
+    ```
+    The site should now be accessible at `http://127.0.0.1:8000/` in your web browser.
 
-# 2. Installer les dépendances
-pip install -r requirements.txt
-python manage.py migrate
+Option 2: Using Docker Compose
+1.  Pull Docker Images
+    ```sh
+    docker pull marwenbellili/nginx:latest
+    docker pull marwenbellili/smartmed:latest
+    ```
+2.  Create a `docker-compose.yml` File
+    Add the following content to a `docker-compose.yml` file:
+    ```yaml
+    services:
+      nginx:
+        image: marwenbellili/nginx:latest # Using the pre-pulled image
+        ports:
+          - "80:80"
+        volumes:
+          - static_volume:/app/staticfiles
+          - media_volume:/app/mediafiles
+        depends_on:
+          - smartmed
+        restart: always
+        deploy:
+          resources:
+            limits:
+              memory: 4G        
+            reservations:
+              memory: 2G        
 
-# 3. Lancer l’application
-gunicorn --bind 0.0.0.0:8000 smartmed.wsgi
-```
+      smartmed:
+        image: marwenbellili/smartmed:latest # Using the pre-pulled image
+        command: sh -c "gunicorn SmartMed.wsgi:application --bind 0.0.0.0:8000"
+        volumes:
+          - static_volume:/app/staticfiles
+          - media_volume:/app/mediafiles
+        expose:
+          - "8000"
+        restart: always
+        deploy:
+          resources:
+            limits:
+              memory: 8G        
+            reservations:
+              memory: 4G        
+        runtime: nvidia              
+        environment:
+          - NVIDIA_VISIBLE_DEVICES=all  
 
-Configurer **NGINX** pour les fichiers statiques et le reverse proxy.
+    volumes:
+      static_volume:
+      media_volume:
+    ```
+    *(Note: If you wish to build the images locally instead of pulling them, replace `image: ...` with `build: ./nginx` and `build: ./SmartMed` respectively, and ensure you have the Dockerfiles in those locations.)*
+
+3.  Start the Containers
+    Launch the services with Docker Compose:
+    ```sh
+    docker-compose up -d
+    ```
+    The SmartMed site should now be accessible on port 80 via your browser!
+
+### 🔌 IoT Setup
+
+1.  Connect the sensors (heart rate, temperature) to the Arduino.
+2.  Upload the code via **Arduino IDE**.
+3.  Configure **ThingSpeak API keys**.
 
 ---
 
-### 🔌 Mise en place IoT
+### 🤖 LLM Access
 
-1. Connecter les capteurs (fréquence cardiaque, température) à l’Arduino.
-2. Uploader le code via **Arduino IDE**.
-3. Configurer les clés API ThingSpeak.
-
----
-
-### 🤖 Accès au LLM
-
-* Le **notebook Colab** est disponible pour tester le modèle fine-tuné.
-* Le modèle est hébergé sur **Hugging Face** : [lien dans le dépôt](https://huggingface.co).
+*   The **Colab notebook** is available for testing the fine-tuned model.
+*   The model is hosted on **Hugging Face**: [link in repository](https://huggingface.co).
 
 ---
 
 ## 📄 License
 
-Projet sous licence **MIT**. Voir le fichier `LICENSE` pour plus de détails.
+Project under **MIT License**. See the `LICENSE` file for more details.
 
 ---
 
 ## 📬 Contact
 
-Développé par **Marwen Bellili**
+Developed by **Marwen Bellili**
 📧 [marwen.bellili@supcom.tn](mailto:marwen.bellili@supcom.tn)
-🔗 GitHub : [marwenbellili](https://github.com/marwenbellili)
+🔗 GitHub: [marwenbellili](https://github.com/marwenbellili)
 
 ---
