@@ -111,11 +111,18 @@ We tested several machine learning algorithms. The **logistic regression model**
   </p>
 *   🔌 Since Proteus cannot directly interact with a real serial port, we used HHD Virtual Serial Port Tools to create a virtual connection (COM port) between Proteus and our host machine.
 <p align="center">
-  <img src="assets/img1.png" width="500px" alt="3D Visualization Preview" />
+  <img src="assets/img23.png" width="500px" alt="3D Visualization Preview" />
 </p>
 *   🐍 A simple Python script was used to read data from the virtual COM port and automatically send them to ThingSpeak, where measurements are visualized in real-time via graphs.
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img24.png" alt="Image de gauche" style="width: 500px; height: 300px;" />
+  <img src="assets/img7.png" alt="Image de droite" style="width: 500px; height: 300px;" />
+</div>
 *   📡 IoT data are then accessible via a web interface for continuous medical monitoring.
 *   👨‍⚕️ Thanks to the ZEGOCLOUD API, doctors can initiate remote consultations while viewing the patient's live vital signs displayed on the platform.
+  <p align="center">
+  <img src="assets/img8.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 
 ---
 
