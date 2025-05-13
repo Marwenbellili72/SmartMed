@@ -64,9 +64,14 @@ We applied two main techniques to **enhance the quality of CT images**:
 *   **CLAHE (Contrast Limited Adaptive Histogram Equalization)**: enhances **local contrast** while **preserving details** without creating artifacts.
 
 > While the improvement is noticeable, it's not perfect. Artifacts may appear depending on the parameters, but overall readability is significantly improved.
-
-*   🖼️ **Figure 1.6**: shows contrast improvement after histogram equalization.
-*   🖼️ **Figure 1.7**: illustrates CLAHE transformation results with a better-distributed histogram in dark areas.
+<p align="center">
+  <img src="assets/img.png" width="500px" alt="3D Visualization Preview" />
+</p>
+*   🖼️ **This Figure**: shows contrast improvement after histogram equalization.
+<p align="center">
+  <img src="assets/img2.png" width="500px" alt="3D Visualization Preview" />
+</p>
+*   🖼️ **This Figure**: illustrates CLAHE transformation results with a better-distributed histogram in dark areas.
 
 These methods offer a **good trade-off** between contrast enhancement and detail preservation.
 
