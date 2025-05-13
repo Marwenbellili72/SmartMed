@@ -93,9 +93,12 @@ Nous avons testé plusieurs algorithmes de machine learning. Le **modèle de ré
 
 ### 🔴 Online Consultations via IoT
 
-* 🩺 Les signes vitaux sont capturés via **Arduino** (fréquence cardiaque, température).
-* 📡 Les données sont envoyées à **ThingSpeak** pour visualisation en temps réel.
-* 👨‍⚕️ Grâce à l’**API ZEGOCLOUD**, nous permettons des **consultations en ligne interactives** avec visualisation des mesures.
+* 🩺 Les signes vitaux du patient — tels que la température corporelle et la fréquence cardiaque — sont mesurés à l’aide d’un montage Arduino.
+* 🧪 Avant le déploiement réel, nous avons simulé ce système via Proteus, ce qui nous a permis de tester le comportement des capteurs dans un environnement virtuel.
+* 🔌 Comme Proteus ne peut pas directement interagir avec un vrai port série, nous avons utilisé HHD Virtual Serial Port Tools pour créer une connexion virtuelle (port COM) entre Proteus et notre machine hôte.
+* 🐍 Un script Python simple a été utilisé pour lire les données à partir du port COM virtuel et les envoyer automatiquement vers ThingSpeak, où les mesures sont visualisées en temps réel via des graphiques.
+* 📡 Les données IoT sont ensuite accessibles via une interface web pour un suivi médical continu.
+* 👨‍⚕️ Grâce à l’API ZEGOCLOUD, les médecins peuvent initier des consultations à distance tout en visualisant en direct les signes vitaux du patient affichés sur la plateforme.
 
 ---
 
