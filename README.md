@@ -65,7 +65,7 @@ We applied two main techniques to **enhance the quality of CT images**:
 
 > While the improvement is noticeable, it's not perfect. Artifacts may appear depending on the parameters, but overall readability is significantly improved.
 <p align="center">
-  <img src="assets/img.png" width="500px" alt="3D Visualization Preview" />
+  <img src="assets/img1.png" width="500px" alt="3D Visualization Preview" />
 </p>
 *   🖼️ **This Figure**: shows contrast improvement after histogram equalization.
 <p align="center">
@@ -84,7 +84,9 @@ We used the **TotalSegmentator API** to perform **3D segmentation** of cardiac C
 > ✅ The results are satisfactory for visualizing and analyzing the **internal structures** of the heart, despite slightly lower **precision**.
 
 The outputs are visualized with **3D Slicer**, facilitating the anatomical study of the heart.
-
+<p align="center">
+  <img src="assets/img3.png" width="500px" alt="3D Visualization Preview" />
+</p>
 ---
 
 ### ❤️‍🔥 Heart Attack Prediction
@@ -92,6 +94,10 @@ The outputs are visualized with **3D Slicer**, facilitating the anatomical study
 We tested several machine learning algorithms. The **logistic regression model** was selected for its **superior performance**.
 
 *   📊 Results include: **confusion matrices** and **ROC curves**.
+<div style="display: flex; justify-content: center;">
+  <img src="assets/img4.png" width="500px" alt="3D Visualization Preview" style="margin-right: 10px;" />
+  <img src="assets/img5.png" width="500px" alt="3D Visualization Preview" />
+</div>
 *   🎯 The model classifies patients according to their **heart attack risk** based on their clinical data.
 
 ---
