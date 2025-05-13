@@ -1,104 +1,168 @@
-SmartMed: AI-Powered Cardiac Care Platform
-Overview
-SmartMed is a project developed at École Supérieure des Communications de Tunis (SUP’COM) in 2025-2026. It leverages AI, IoT, and web technologies to enhance cardiac care through medical image analysis, heart attack prediction, and online consultations.
-Technologies Used
-Frontend
+# **SmartMed: AI-Powered Cardiac Care Platform**
 
-HTML5: Structures web content.
-CSS3: Styles the interface for clarity and ergonomics.
-JavaScript: Enables interactive features like image zooming.
-jQuery: Simplifies DOM manipulation and event handling.
+## 🩺 Overview
 
-Backend
+**SmartMed** is an innovative platform developed at **École Supérieure des Communications de Tunis (SUP’COM)** during the academic year **2025–2026**. It combines **Artificial Intelligence (AI)**, **Internet of Things (IoT)**, and **web technologies** to improve cardiac care through:
 
-Django: Python framework for secure server-side logic and data management.
+* Medical image enhancement and segmentation
+* Heart attack risk prediction
+* Real-time online consultations
 
-Machine Learning and AI
+---
 
-Totalsegmentator: For heart segmentation.
-Logistic Regression: For heart attack prediction.
-LoRA and Unsloth: For fine-tuning LLMs.
-Hugging Face: For model storage and access.
+## 🧰 Technologies Used
 
-IoT
+### 🌐 Frontend
 
-Arduino: Captures vital signs.
-ThingSpeak: Stores and visualizes IoT data.
-ZEGOCLOUD API: Enables real-time consultations.
+* **HTML5** – Web content structure
+* **CSS3** – Styling for clean and ergonomic design
+* **JavaScript** – Interactive functionalities (e.g., image zooming)
+* **jQuery** – Simplified DOM manipulation and event handling
 
-DevOps
+### 🛠️ Backend
 
-Jenkins: Automates CI/CD pipelines.
-NGINX: Serves static files and acts as a reverse proxy.
-Trivy: Scans for vulnerabilities.
-SonarQube: Analyzes code quality.
-Docker: Containerizes applications.
-Prometheus and Grafana: Monitor performance.
+* **Django** – Python framework for backend logic and database management
 
-Security
+### 🤖 Machine Learning & AI
 
-Nmap and Wireshark: For security testing.
+* **Totalsegmentator** – 3D heart structure segmentation from CT scans
+* **Logistic Regression** – Heart attack risk prediction model
+* **LoRA + Unsloth** – Fine-tuning large language models (LLMs)
+* **Hugging Face** – Model hosting and access
 
-Main Features
+### 📡 IoT
 
-Medical Image EnhancementWe used histogram equalization and CLAHE to enhance CT image contrast and visibility.
+* **Arduino** – Acquisition of heart rate and body temperature
+* **ThingSpeak** – IoT data storage and real-time visualization
+* **ZEGOCLOUD API** – Real-time video consultation integration
 
-Heart SegmentationWe employed Totalsegmentator to automatically segment heart structures in 3D CT images.
+### ⚙️ DevOps
 
-Heart Attack PredictionWe trained multiple models and selected Logistic Regression as the most performant for predicting heart attack risks.
+* **Jenkins** – CI/CD automation
+* **NGINX** – Web server and reverse proxy
+* **Trivy** – Vulnerability scanning
+* **SonarQube** – Static code analysis
+* **Docker** – Application containerization
+* **Prometheus & Grafana** – Performance monitoring and visualization
 
-Online ConsultationsWe developed an IoT solution using Arduino to capture heart rate and temperature, sent data to ThingSpeak, and integrated the ZEGOCLOUD API for real-time consultations.
+### 🔐 Security
 
-LLM for CT Image AnalysisWe fine-tuned a Large Language Model (LLM) with LoRA using Unsloth to analyze CT images. The model was uploaded to Hugging Face and can be accessed via a Google Colab notebook. Full deployment was not completed due to complexity.
+* **Nmap & Wireshark** – Security assessment and network traffic analysis
 
-CI/CD PipelineWe implemented a CI/CD pipeline using Jenkins, NGINX, Trivy, SonarQube, Docker, Prometheus, and Grafana for automated code analysis, security scanning, and deployment.
+---
 
-Security TestingWe conducted tests using Nmap and Wireshark to identify and mitigate vulnerabilities.
+## 🚀 Key Features
 
+### 🔬 Medical Image Enhancement
 
-Visualization of Results
+* Enhanced CT scan contrast using **Histogram Equalization** and **CLAHE** (Contrast Limited Adaptive Histogram Equalization)
 
-CT Image Enhancement: Visualized improved contrast using histogram equalization and CLAHE, displayed on the web interface.
-Heart Segmentation: 3D heart structures segmented by Totalsegmentator, visualized using 3D Slicer.
-Heart Attack Prediction: Logistic Regression model performance shown via ROC curves and confusion matrices.
-IoT Data: Heart rate and temperature data plotted in real-time on ThingSpeak and integrated into the web platform.
-LLM Outputs: CT image analysis results displayed as textual descriptions in the Colab notebook.
-Pipeline Monitoring: Jenkins pipeline status and code quality metrics visualized on Grafana dashboards, with vulnerability reports from Trivy.
+### 🫀 Heart Segmentation
 
-Setup Instructions
-Prerequisites
+* Automated segmentation of cardiac structures in 3D CT images via **Totalsegmentator**
 
-Python 3.8+
-Docker
-Arduino IDE
-ThingSpeak and ZEGOCLOUD accounts
-Hugging Face account
+### ❤️ Heart Attack Prediction
 
-Installation
+* Developed and evaluated multiple models
+* **Logistic Regression** selected for its superior performance
 
-Clone the repository:git clone https://github.com/marwenbellili/smartmed.git
-cd smartmed
+### 🧑‍⚕️ Real-Time Online Consultations
 
+* IoT-based health monitoring with **Arduino sensors**
+* Data sent to **ThingSpeak** and integrated with **ZEGOCLOUD API** for live consultations
 
-Install backend dependencies:pip install -r requirements.txt
-python manage.py migrate
+### 📊 CT Image Analysis with LLM
 
+* Fine-tuned a **Large Language Model** (LLM) using **LoRA** and **Unsloth**
+* Model hosted on **Hugging Face** and accessible through **Google Colab**
+* Full deployment not completed due to resource complexity
 
-Set up IoT:
-Connect Arduino with heartbeat and temperature sensors.
-Upload code via Arduino IDE.
-Configure ThingSpeak API.
+### 🔁 CI/CD & Monitoring Pipeline
 
+* Implemented automated CI/CD with:
 
-Run the application:gunicorn --bind 0.0.0.0:8000 smartmed.wsgi
+  * **Jenkins**, **Docker**, **NGINX**, **SonarQube**, **Trivy**
+  * Monitoring using **Prometheus** and **Grafana**
 
-Configure NGINX for static files and proxy.
+### 🔒 Security Testing
 
-Accessing the LLM
+* Performed vulnerability scans and traffic analysis with **Nmap** and **Wireshark**
 
-Use the Google Colab notebook to interact with the fine-tuned LLM on Hugging Face.
+---
 
-License
-MIT License. See LICENSE file.
-Contact
-marwen.bellili@supcom.tn
+## 📈 Visualization Highlights
+
+| Feature                 | Visualization Tool            | Description                                                  |
+| ----------------------- | ----------------------------- | ------------------------------------------------------------ |
+| CT Image Enhancement    | Web Interface                 | Contrast improvement using Histogram Equalization and CLAHE  |
+| Heart Segmentation      | 3D Slicer                     | Visualization of segmented 3D heart structures               |
+| Heart Attack Prediction | ROC Curves & Confusion Matrix | Model performance metrics                                    |
+| IoT Data Monitoring     | ThingSpeak + Web Dashboard    | Live graphs of heart rate and temperature                    |
+| LLM CT Analysis         | Google Colab                  | Textual medical insights generated from CT scans             |
+| Pipeline & Metrics      | Jenkins + Grafana             | CI/CD status, performance metrics, and vulnerability reports |
+
+---
+
+## ⚙️ Setup Instructions
+
+### ✅ Prerequisites
+
+* Python 3.8+
+* Docker
+* Arduino IDE
+* ThingSpeak & ZEGOCLOUD accounts
+* Hugging Face account
+
+### 📦 Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/marwenbellili/smartmed.git
+   cd smartmed
+   ```
+
+2. **Install backend dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   python manage.py migrate
+   ```
+
+3. **Set up IoT**
+
+   * Connect the Arduino with heart rate and temperature sensors
+   * Upload firmware via the Arduino IDE
+   * Configure ThingSpeak API credentials
+
+4. **Run the application**
+
+   ```bash
+   gunicorn --bind 0.0.0.0:8000 smartmed.wsgi
+   ```
+
+5. **Configure NGINX**
+
+   * Serve static files
+   * Reverse proxy for Gunicorn
+
+---
+
+## 🤖 Accessing the LLM
+
+Use the **Google Colab notebook** provided in the repository to interact with the fine-tuned LLM hosted on **Hugging Face**.
+
+---
+
+## 📄 License
+
+SmartMed is released under the **MIT License**. See the `LICENSE` file for details.
+
+---
+
+## 📬 Contact
+
+For any inquiries or collaboration requests, contact:
+**[marwen.bellili@supcom.tn](mailto:marwen.bellili@supcom.tn)**
+
+---
