@@ -94,9 +94,9 @@ The outputs are visualized with **3D Slicer**, facilitating the anatomical study
 We tested several machine learning algorithms. The **logistic regression model** was selected for its **superior performance**.
 
 *   📊 Results include: **confusion matrices** and **ROC curves**.
-<div style="display: flex; justify-content: center; align-items: center;">
-  <img src="assets/img4.png" alt="3D Visualization Preview" style="height: 300px; margin-right: 10px;" />
-  <img src="assets/img5.png" alt="3D Visualization Preview" style="height: 300px;" />
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="assets/img4.png" alt="Image de gauche" style="width: 500px; height: 300px;" />
+  <img src="assets/img5.png" alt="Image de droite" style="width: 500px; height: 300px;" />
 </div>
 *   🎯 The model classifies patients according to their **heart attack risk** based on their clinical data.
 
