@@ -1,168 +1,200 @@
-# **SmartMed: AI-Powered Cardiac Care Platform**
+# 🩺 SmartMed: AI-Powered Cardiac Care Platform
 
-## 🩺 Overview
+## 🧭 Overview
 
-**SmartMed** is an innovative platform developed at **École Supérieure des Communications de Tunis (SUP’COM)** during the academic year **2025–2026**. It combines **Artificial Intelligence (AI)**, **Internet of Things (IoT)**, and **web technologies** to improve cardiac care through:
+**SmartMed** est un projet développé à l’**École Supérieure des Communications de Tunis (SUP’COM)** durant l’année universitaire **2025–2026**. Il combine l’**intelligence artificielle**, l’**IoT**, et les **technologies web** pour offrir une plateforme avancée d’aide au diagnostic et à la prévention des maladies cardiaques.
 
-* Medical image enhancement and segmentation
-* Heart attack risk prediction
-* Real-time online consultations
+Le système propose :
+
+* L’**amélioration d’images médicales** (CT),
+* La **segmentation du cœur** en 3D,
+* La **prédiction des risques d’infarctus**,
+* Des **consultations médicales en ligne** en temps réel.
 
 ---
 
-## 🧰 Technologies Used
+## ⚙️ Technologies Utilisées
 
 ### 🌐 Frontend
 
-* **HTML5** – Web content structure
-* **CSS3** – Styling for clean and ergonomic design
-* **JavaScript** – Interactive functionalities (e.g., image zooming)
-* **jQuery** – Simplified DOM manipulation and event handling
+* **HTML5** : Structure du contenu web
+* **CSS3** : Mise en forme pour une interface ergonomique
+* **JavaScript** : Fonctionnalités interactives (zoom sur les images, etc.)
+* **jQuery** : Simplifie la manipulation du DOM et la gestion des événements
 
-### 🛠️ Backend
+### 🖥️ Backend
 
-* **Django** – Python framework for backend logic and database management
+* **Django** : Framework Python pour la logique serveur et la gestion des données
 
-### 🤖 Machine Learning & AI
+### 🧠 Machine Learning & AI
 
-* **Totalsegmentator** – 3D heart structure segmentation from CT scans
-* **Logistic Regression** – Heart attack risk prediction model
-* **LoRA + Unsloth** – Fine-tuning large language models (LLMs)
-* **Hugging Face** – Model hosting and access
+* **TotalSegmentator** : Segmentation 3D des structures cardiaques
+* **Logistic Regression** : Prédiction du risque d’infarctus
+* **LoRA + Unsloth** : Fine-tuning de LLMs
+* **Hugging Face** : Hébergement et partage des modèles
 
 ### 📡 IoT
 
-* **Arduino** – Acquisition of heart rate and body temperature
-* **ThingSpeak** – IoT data storage and real-time visualization
-* **ZEGOCLOUD API** – Real-time video consultation integration
+* **Arduino** : Acquisition de signes vitaux (température, fréquence cardiaque)
+* **ThingSpeak** : Visualisation des données IoT en temps réel
+* **ZEGOCLOUD API** : Consultations médicales en ligne en direct
 
-### ⚙️ DevOps
+### 🛠️ DevOps
 
-* **Jenkins** – CI/CD automation
-* **NGINX** – Web server and reverse proxy
-* **Trivy** – Vulnerability scanning
-* **SonarQube** – Static code analysis
-* **Docker** – Application containerization
-* **Prometheus & Grafana** – Performance monitoring and visualization
+* **Jenkins** : Intégration et déploiement continu (CI/CD)
+* **NGINX** : Reverse proxy & gestion des fichiers statiques
+* **Docker** : Conteneurisation des services
+* **Trivy** : Analyse des vulnérabilités
+* **SonarQube** : Analyse de qualité du code
+* **Prometheus & Grafana** : Surveillance des performances
 
-### 🔐 Security
+### 🔐 Sécurité
 
-* **Nmap & Wireshark** – Security assessment and network traffic analysis
+* **Nmap & Wireshark** : Tests de sécurité réseau
 
 ---
 
-## 🚀 Key Features
+## 🏥 Principales Fonctionnalités
 
-### 🔬 Medical Image Enhancement
+### 📈 Medical Image Enhancement
 
-* Enhanced CT scan contrast using **Histogram Equalization** and **CLAHE** (Contrast Limited Adaptive Histogram Equalization)
+Nous avons appliqué deux techniques principales pour **améliorer la qualité des images CT** :
+
+* **Égalisation d’histogramme** : améliore la **luminosité et le contraste** globaux.
+* **CLAHE (Contrast Limited Adaptive Histogram Equalization)** : améliore le **contraste local** tout en **préservant les détails** sans créer d'artefacts.
+
+> Bien que l’amélioration soit notable, elle n’est pas parfaite. Des artefacts peuvent apparaître selon les paramètres, mais la lisibilité globale est significativement améliorée.
+
+* 🖼️ **Figure 1.6** : montre l’amélioration du contraste après égalisation d’histogramme.
+* 🖼️ **Figure 1.7** : illustre les résultats de la transformation CLAHE avec un histogramme mieux réparti dans les zones sombres.
+
+Ces méthodes offrent un **bon compromis** entre amélioration du contraste et conservation des détails.
+
+---
 
 ### 🫀 Heart Segmentation
 
-* Automated segmentation of cardiac structures in 3D CT images via **Totalsegmentator**
+Nous avons utilisé l’**API de TotalSegmentator** pour réaliser la **segmentation 3D** des images CT du cœur. Pour **accélérer le traitement**, nous avons choisi le **mode `fast`**, qui sacrifie légèrement la précision au profit du temps d’exécution.
 
-### ❤️ Heart Attack Prediction
+> ✅ Les résultats sont satisfaisants pour la visualisation et l’analyse des **structures internes** du cœur malgré une **précision moindre**.
 
-* Developed and evaluated multiple models
-* **Logistic Regression** selected for its superior performance
+Les sorties sont visualisées avec **3D Slicer**, facilitant ainsi l’étude anatomique du cœur.
 
-### 🧑‍⚕️ Real-Time Online Consultations
+---
 
-* IoT-based health monitoring with **Arduino sensors**
-* Data sent to **ThingSpeak** and integrated with **ZEGOCLOUD API** for live consultations
+### ❤️‍🔥 Heart Attack Prediction
 
-### 📊 CT Image Analysis with LLM
+Nous avons testé plusieurs algorithmes de machine learning. Le **modèle de régression logistique** a été retenu pour sa **meilleure performance**.
 
-* Fine-tuned a **Large Language Model** (LLM) using **LoRA** and **Unsloth**
-* Model hosted on **Hugging Face** and accessible through **Google Colab**
-* Full deployment not completed due to resource complexity
+* 📊 Les résultats incluent : **matrices de confusion** et **courbes ROC**.
+* 🎯 Le modèle classe les patients selon leur **risque d’infarctus** à partir de leurs données cliniques.
 
-### 🔁 CI/CD & Monitoring Pipeline
+---
 
-* Implemented automated CI/CD with:
+### 🔴 Online Consultations via IoT
 
-  * **Jenkins**, **Docker**, **NGINX**, **SonarQube**, **Trivy**
-  * Monitoring using **Prometheus** and **Grafana**
+* 🩺 Les signes vitaux sont capturés via **Arduino** (fréquence cardiaque, température).
+* 📡 Les données sont envoyées à **ThingSpeak** pour visualisation en temps réel.
+* 👨‍⚕️ Grâce à l’**API ZEGOCLOUD**, nous permettons des **consultations en ligne interactives** avec visualisation des mesures.
+
+---
+
+### 🧠 LLM for CT Image Analysis
+
+Nous avons fine-tuné un **LLM (Large Language Model)** avec **LoRA** via **Unsloth**, pour l’analyse sémantique des images CT.
+
+* 📁 Le modèle est hébergé sur **Hugging Face**.
+* 💻 Il est accessible depuis un **notebook Google Colab**.
+* ❗ Déploiement complet non réalisé à cause de la complexité des ressources nécessaires.
+
+---
+
+### 🔁 CI/CD Pipeline
+
+Mise en place d’un pipeline DevOps automatisé :
+
+* **Jenkins** : automatisation des tests et déploiements
+* **SonarQube + Trivy** : contrôle qualité et sécurité du code
+* **Docker + NGINX** : déploiement conteneurisé
+* **Grafana + Prometheus** : surveillance des performances
+
+---
 
 ### 🔒 Security Testing
 
-* Performed vulnerability scans and traffic analysis with **Nmap** and **Wireshark**
+Nous avons effectué des **tests de sécurité réseau** avec :
+
+* **Nmap** : scan des ports et services exposés
+* **Wireshark** : analyse du trafic réseau pour détecter des vulnérabilités
 
 ---
 
-## 📈 Visualization Highlights
+## 📊 Visualisation des Résultats
 
-| Feature                 | Visualization Tool            | Description                                                  |
-| ----------------------- | ----------------------------- | ------------------------------------------------------------ |
-| CT Image Enhancement    | Web Interface                 | Contrast improvement using Histogram Equalization and CLAHE  |
-| Heart Segmentation      | 3D Slicer                     | Visualization of segmented 3D heart structures               |
-| Heart Attack Prediction | ROC Curves & Confusion Matrix | Model performance metrics                                    |
-| IoT Data Monitoring     | ThingSpeak + Web Dashboard    | Live graphs of heart rate and temperature                    |
-| LLM CT Analysis         | Google Colab                  | Textual medical insights generated from CT scans             |
-| Pipeline & Metrics      | Jenkins + Grafana             | CI/CD status, performance metrics, and vulnerability reports |
+| Résultat                           | Outil utilisé                 | Détails                       |
+| ---------------------------------- | ----------------------------- | ----------------------------- |
+| **CT Image Enhancement**           | Web UI                        | Résultats CLAHE + égalisation |
+| **Segmentation 3D du cœur**        | 3D Slicer                     | Affichage interactif          |
+| **Prédiction d’infarctus**         | Django + Matplotlib           | ROC, confusion matrix         |
+| **Données IoT (température, BPM)** | ThingSpeak + Web dashboard    | Graphes temps réel            |
+| **Analyse LLM**                    | Google Colab + Hugging Face   | Résumés textuels              |
+| **Monitoring & Sécurité**          | Grafana, Trivy, Jenkins, Nmap | Dashboards + rapports         |
 
 ---
 
-## ⚙️ Setup Instructions
+## 🧰 Setup Instructions
 
-### ✅ Prerequisites
+### ✅ Prérequis
 
 * Python 3.8+
 * Docker
 * Arduino IDE
-* ThingSpeak & ZEGOCLOUD accounts
-* Hugging Face account
+* Comptes ThingSpeak, Hugging Face, ZEGOCLOUD
 
-### 📦 Installation
+### 🚀 Installation
 
-1. **Clone the repository**
+```bash
+# 1. Cloner le dépôt
+git clone https://github.com/marwenbellili/smartmed.git
+cd smartmed
 
-   ```bash
-   git clone https://github.com/marwenbellili/smartmed.git
-   cd smartmed
-   ```
+# 2. Installer les dépendances
+pip install -r requirements.txt
+python manage.py migrate
 
-2. **Install backend dependencies**
+# 3. Lancer l’application
+gunicorn --bind 0.0.0.0:8000 smartmed.wsgi
+```
 
-   ```bash
-   pip install -r requirements.txt
-   python manage.py migrate
-   ```
-
-3. **Set up IoT**
-
-   * Connect the Arduino with heart rate and temperature sensors
-   * Upload firmware via the Arduino IDE
-   * Configure ThingSpeak API credentials
-
-4. **Run the application**
-
-   ```bash
-   gunicorn --bind 0.0.0.0:8000 smartmed.wsgi
-   ```
-
-5. **Configure NGINX**
-
-   * Serve static files
-   * Reverse proxy for Gunicorn
+Configurer **NGINX** pour les fichiers statiques et le reverse proxy.
 
 ---
 
-## 🤖 Accessing the LLM
+### 🔌 Mise en place IoT
 
-Use the **Google Colab notebook** provided in the repository to interact with the fine-tuned LLM hosted on **Hugging Face**.
+1. Connecter les capteurs (fréquence cardiaque, température) à l’Arduino.
+2. Uploader le code via **Arduino IDE**.
+3. Configurer les clés API ThingSpeak.
+
+---
+
+### 🤖 Accès au LLM
+
+* Le **notebook Colab** est disponible pour tester le modèle fine-tuné.
+* Le modèle est hébergé sur **Hugging Face** : [lien dans le dépôt](https://huggingface.co).
 
 ---
 
 ## 📄 License
 
-SmartMed is released under the **MIT License**. See the `LICENSE` file for details.
+Projet sous licence **MIT**. Voir le fichier `LICENSE` pour plus de détails.
 
 ---
 
 ## 📬 Contact
 
-For any inquiries or collaboration requests, contact:
-**[marwen.bellili@supcom.tn](mailto:marwen.bellili@supcom.tn)**
+Développé par **Marwen Bellili**
+📧 [marwen.bellili@supcom.tn](mailto:marwen.bellili@supcom.tn)
+🔗 GitHub : [marwenbellili](https://github.com/marwenbellili)
 
 ---
