@@ -274,31 +274,9 @@ Option 2: Using Docker Compose
     ```
     The SmartMed site should now be accessible on port 80 via your browser!
 
-### 🔌 IoT Setup
-
-1.  Connect the sensors (heart rate, temperature) to the Arduino.
-2.  Upload the code via **Arduino IDE**.
-3.  Configure **ThingSpeak API keys**.
-
 ---
 
 ### 🤖 LLM Access
 
-*   The **Colab notebook** is available for testing the fine-tuned model.
-*   The model is hosted on **Hugging Face**: [link in repository](https://huggingface.co).
-
----
-
-## 📄 License
-
-Project under **MIT License**. See the `LICENSE` file for more details.
-
----
-
-## 📬 Contact
-
-Developed by **Marwen Bellili**
-📧 [marwen.bellili@supcom.tn](mailto:marwen.bellili@supcom.tn)
-🔗 GitHub: [marwenbellili](https://github.com/marwenbellili)
-
----
+*   The **Colab notebook** is available for testing the fine-tuned model.[Try The Model](https://colab.research.google.com/drive/1AGGNVoC-DFCiVFZ3-GgFKxxLcATJxRM5?usp=sharing))
+*   The model is hosted on **Hugging Face**: [link in repository]([https://huggingface.co](https://huggingface.co/Marwen72/lora_model)).
