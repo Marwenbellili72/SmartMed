@@ -106,7 +106,13 @@ We tested several machine learning algorithms. The **logistic regression model**
 
 *   🩺 The patient's vital signs—such as body temperature and heart rate—are measured using an Arduino setup.
 *   🧪 Before actual deployment, we simulated this system using Proteus, allowing us to test sensor behavior in a virtual environment.
+  <p align="center">
+  <img src="assets/img6.png" width="500px" alt="3D Visualization Preview" />
+  </p>
 *   🔌 Since Proteus cannot directly interact with a real serial port, we used HHD Virtual Serial Port Tools to create a virtual connection (COM port) between Proteus and our host machine.
+<p align="center">
+  <img src="assets/img1.png" width="500px" alt="3D Visualization Preview" />
+</p>
 *   🐍 A simple Python script was used to read data from the virtual COM port and automatically send them to ThingSpeak, where measurements are visualized in real-time via graphs.
 *   📡 IoT data are then accessible via a web interface for continuous medical monitoring.
 *   👨‍⚕️ Thanks to the ZEGOCLOUD API, doctors can initiate remote consultations while viewing the patient's live vital signs displayed on the platform.
