@@ -279,4 +279,4 @@ Option 2: Using Docker Compose
 ### 🤖 LLM Access
 
 *   The **Colab notebook** is available for testing the fine-tuned model.[Try The Model](https://colab.research.google.com/drive/1AGGNVoC-DFCiVFZ3-GgFKxxLcATJxRM5?usp=sharing)
-*   The model is hosted on **Hugging Face**: [link in repository]([https://huggingface.co](https://huggingface.co/Marwen72/lora_model)).
+*   The model files on **Hugging Face**: [link to the repository](https://huggingface.co/Marwen72/lora_model).
